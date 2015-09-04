@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20150904183027) do
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "price_in_cent"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "price_in_cents"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end
