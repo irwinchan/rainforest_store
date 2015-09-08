@@ -1,10 +1,10 @@
 <h1>Products</h1>
+<%= link_to "back", :back %>
 
 <ul>
   <li>Product Name: <%= @product.name %></li>
-  <li>Product Name: <%= @product.description %></li>
-  <li>Product Name: <%= @product.price_in_cents %></li>
-  <li>Product Name: <%= @product.formatted_price %></li>
+  <li>Product Description: <%= @product.description %></li>
+  <li>Product price: <%= @product.formatted_price %></li>
 </ul>
 
 <% if current_user %>
