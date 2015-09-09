@@ -13,12 +13,7 @@
   <%= form_for([@product, @review]) do |f| %>
     <% if @review.errors.any? %>
       <div id="error_explination">
-        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved: </h2>
-        <ul>
-          <% @review.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
+        <%= render partial: 'shared/flash', locals: { object: @product } %>
       </div>
     <% end %>
 
