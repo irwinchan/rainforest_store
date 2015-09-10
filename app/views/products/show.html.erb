@@ -43,3 +43,11 @@
     <% end %>
   </p>
 <% end %>
+
+<h3>Categories</h3>
+
+<% @product.categories.each do |category| %>
+  <p>
+    <%= category.name %>, &nbsp
+  </p>
+<% end %>
