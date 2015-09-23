@@ -23,4 +23,12 @@ $(document).on('ready page:load', function(){
 
     $.getScript('/products?search=' + searchValue);
   });
+
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+      return alert('near bottom');
+    }
+
+  })
+
 });
