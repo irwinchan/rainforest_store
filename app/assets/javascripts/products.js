@@ -1,11 +1,8 @@
-// # Place all the behaviors and hooks related to the matching controller here.
-// # All this logic will automatically be available in application.js.
-// # You can use CoffeeScript in this file: http://coffeescript.org/
-
 $(document).on('ready page:load', function(){
   $('#search-form').submit(function(event) {
     event.preventDefault();
     var searchValue = $('#search').val();
+     $.getScript('/products?search=' + searchValue);
 
     // $.ajax({
     //   url: 'products?search=' + searchValue,
@@ -20,9 +17,11 @@ $(document).on('ready page:load', function(){
     //     console.log(data);
     //     $('#products').html(data);
     //   });
-
-    $.getScript('/products?search=' + searchValue);
   });
+
+  if ($('html').height() < $(window).height()) {
+    $.getScript($('.pagination span.next').children().attr('href'));
+  }
 
   $(window).scroll(function() {
     var url = $('.pagination span.next').children().attr('href');
