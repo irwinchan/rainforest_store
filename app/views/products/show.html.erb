@@ -32,19 +32,21 @@
 <h3>Reviews</h3>
 
 <p>Reviews for <%= @product.name %></p>
-
-<% @product.reviews.order(created_at: :desc).each do |review| %>
-  <div class="review">
-    <div class="poster">
-      <%= review.comment %>
-    <br>
+<div id="review-list">
+  <% @product.reviews.order(created_at: :desc).each do |review| %>
+    <div class="review">
       <% if review.user != nil %>
-        <em>by <%= review.user.email %></em>
-        Added on: <%= review.created_at %>
+        <div class="poster">
+          <em>by <%= review.user.email %></em>
+          Added on: <%= review.created_at %>
+        </div>
+        <p class="comment">
+          <%= review.comment %>
+        </p>
       <% end %>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <h3>Categories</h3>
 
