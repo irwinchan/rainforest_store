@@ -33,19 +33,7 @@
 
 <p>Reviews for <%= @product.name %></p>
 <div id="review-list">
-  <% @product.reviews.order(created_at: :desc).each do |review| %>
-    <div class="review">
-      <% if review.user != nil %>
-        <div class="poster">
-          <em>by <%= review.user.email %></em>
-          Added on: <%= review.created_at %>
-        </div>
-        <p class="comment">
-          <%= review.comment %>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render :partial => "reviews" %>
 </div>
 
 <h3>Categories</h3>
