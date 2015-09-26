@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     #   product_id: @product.id,
     #   user_id: current_user.id
     # )
-    #alternative syntax
+    # alternative syntax
 
     @review = @product.reviews.build(review_params)
     @review.user = current_user

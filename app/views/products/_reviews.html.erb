@@ -1,4 +1,4 @@
-<% @product.reviews.order(created_at: :desc).each do |review| %>
+<% #@product.reviews.order(created_at: :desc).each do |review| %>
   <div class="review">
     <% if review.user != nil %>
       <div class="poster">
@@ -10,4 +10,4 @@
       </p>
     <% end %>
   </div>
-<% end %>
+<%# end %>

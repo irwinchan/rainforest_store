@@ -7,6 +7,13 @@
   <li>Product price: <%= @product.formatted_price %></li>
 </ul>
 
+<h3>Categories</h3>
+<% @product.categories.each do |category| %>
+  <p>
+    <%= category.name %>, &nbsp
+  </p>
+<% end %>
+
 <% if current_user %>
   <h4>New Review</h4>
   <div id="review-form-errors">
@@ -29,16 +36,8 @@
 
 <p>Reviews for <%= @product.name %></p>
 <div id="review-list">
-  <%= render :partial => "reviews" %>
+  <%= render @product.reviews.order(created_at: :asc) %>
 </div>
-
-<h3>Categories</h3>
-
-<% @product.categories.each do |category| %>
-  <p>
-    <%= category.name %>, &nbsp
-  </p>
-<% end %>
 
 <script type="text/javascript">
 $(function(){

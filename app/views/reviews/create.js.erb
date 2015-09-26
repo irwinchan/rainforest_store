@@ -2,6 +2,6 @@
   $("#review-form-errors").html("<%= j (render(:partial => '/products/review_form_errors')) %>");
 <% else %>
   $("review-form-errors").html("");
-  $("#review-list").html("<%= j (render(:partial => '/products/reviews')) %>");
+  $("#review-list").append("<%= j (render(:partial => '/products/reviews')) %>");
   $("#new_review")[0].reset();
 <% end %>
